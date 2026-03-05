@@ -122,7 +122,7 @@ export default function Nav({ t, mode, toggleMode, navigate, currentPath }) {
             {mode === "dark" ? "◆" : "◇"}
           </button>
 
-          <Btn href="/CV.pdf" variant="outline" t={t} style={{ padding: "7px 18px", fontSize: 13 }}>
+          <Btn href="/CV_updated.pdf" variant="outline" t={t} style={{ padding: "7px 18px", fontSize: 13 }}>
             CV ↗
           </Btn>
 
