@@ -167,7 +167,7 @@ export default function ExperiencePage({ t }) {
                 fontWeight: 500,
               }}
             >
-              2020 – 2024
+              2021 – 2025
             </span>
           </div>
           <p style={{ color: t.muted, fontSize: 14, lineHeight: 1.75 }}>

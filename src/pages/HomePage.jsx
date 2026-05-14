@@ -190,8 +190,8 @@ export default function HomePage({ t, navigate }) {
           <div style={{ animation: "fadeUp 0.6s ease 0.3s both", flexShrink: 0 }}>
             <div
               style={{
-                width: 280,
-                height: 280,
+                width: 340,
+                height: 340,
                 borderRadius: "50%",
                 border: `1px solid ${t.border}`,
                 overflow: "hidden",
@@ -201,7 +201,7 @@ export default function HomePage({ t, navigate }) {
               }}
             >
               <img
-                src="/Myprofiel_fb.jpg"
+                src="/Formal_photo_linkedin.jpeg"
                 alt="Amit Chakraborty"
                 style={{
                   width: "100%",

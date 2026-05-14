@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { NAV_ITEMS } from "../data/index";
-import { Btn } from "./UI";
 
 export default function Nav({ t, navigate, currentPath }) {
   const [scrolled, setScrolled] = useState(false);
@@ -55,29 +54,45 @@ export default function Nav({ t, navigate, currentPath }) {
         {/* Desktop links */}
         <ul
           className="desktop-nav"
-          style={{ display: "flex", gap: 4, listStyle: "none", margin: 0, padding: 0 }}
+          style={{ display: "flex", gap: 4, listStyle: "none", margin: 0, padding: 0, alignItems: "center" }}
         >
           {NAV_ITEMS.map((item) => {
-            const active = currentPath === item.path;
+            const active = !item.external && currentPath === item.path;
+            const sharedStyle = {
+              background: active ? t.text : "transparent",
+              border: "none",
+              color: active ? t.primaryBtnText : t.muted,
+              padding: "6px 14px",
+              borderRadius: 6,
+              fontSize: 14,
+              lineHeight: "20px",
+              cursor: "pointer",
+              fontFamily: "'Inter', sans-serif",
+              transition: "all 0.2s",
+              fontWeight: active ? 600 : 400,
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: 32,
+              boxSizing: "border-box",
+            };
             return (
-              <li key={item.path}>
-                <button
-                  onClick={() => navigate(item.path)}
-                  style={{
-                    background: "transparent",
-                    border: "none",
-                    color: active ? t.text : t.muted,
-                    padding: "6px 14px",
-                    borderRadius: 6,
-                    fontSize: 14,
-                    cursor: "pointer",
-                    fontFamily: "'Inter', sans-serif",
-                    transition: "all 0.2s",
-                    fontWeight: active ? 600 : 400,
-                  }}
-                >
-                  {item.label}
-                </button>
+              <li key={item.path} style={{ display: "flex", alignItems: "center" }}>
+                {item.external ? (
+                  <a
+                    href={item.path}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ ...sharedStyle, background: "transparent", color: t.muted, fontWeight: 400 }}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <button onClick={() => navigate(item.path)} style={sharedStyle}>
+                    {item.label}
+                  </button>
+                )}
               </li>
             );
           })}
@@ -85,10 +100,6 @@ export default function Nav({ t, navigate, currentPath }) {
 
         {/* Right side controls */}
         <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-          <Btn href="/CV_Latest.pdf" variant="outline" t={t} style={{ padding: "7px 18px", fontSize: 13 }}>
-            CV ↗
-          </Btn>
-
           {/* Hamburger */}
           <button
             onClick={() => setMenuOpen((o) => !o)}
@@ -124,29 +135,56 @@ export default function Nav({ t, navigate, currentPath }) {
             borderBottom: `1px solid ${t.border}`,
           }}
         >
-          {NAV_ITEMS.map((item) => (
-            <button
-              key={item.path}
-              onClick={() => navigate(item.path)}
-              style={{
-                display: "block",
-                width: "100%",
-                textAlign: "left",
-                background: currentPath === item.path ? t.tagBg : "transparent",
-                border: "none",
-                borderBottom: `1px solid ${t.border}`,
-                color: currentPath === item.path ? t.text : t.muted,
-                padding: "14px 24px",
-                fontSize: 15,
-                cursor: "pointer",
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: currentPath === item.path ? 600 : 400,
-                transition: "all 0.2s",
-              }}
-            >
-              {item.label}
-            </button>
-          ))}
+          {NAV_ITEMS.map((item) =>
+            item.external ? (
+              <a
+                key={item.path}
+                href={item.path}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: "block",
+                  width: "100%",
+                  textAlign: "left",
+                  background: "transparent",
+                  border: "none",
+                  borderBottom: `1px solid ${t.border}`,
+                  color: t.muted,
+                  padding: "14px 24px",
+                  fontSize: 15,
+                  cursor: "pointer",
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 400,
+                  textDecoration: "none",
+                  transition: "all 0.2s",
+                }}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <button
+                key={item.path}
+                onClick={() => navigate(item.path)}
+                style={{
+                  display: "block",
+                  width: "100%",
+                  textAlign: "left",
+                  background: currentPath === item.path ? t.tagBg : "transparent",
+                  border: "none",
+                  borderBottom: `1px solid ${t.border}`,
+                  color: currentPath === item.path ? t.text : t.muted,
+                  padding: "14px 24px",
+                  fontSize: 15,
+                  cursor: "pointer",
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: currentPath === item.path ? 600 : 400,
+                  transition: "all 0.2s",
+                }}
+              >
+                {item.label}
+              </button>
+            )
+          )}
         </div>
       )}
     </>
