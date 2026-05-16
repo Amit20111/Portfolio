@@ -41,7 +41,7 @@ export default function Footer({ t, navigate }) {
             AI Researcher & Developer specializing in LLMs and scalable backend systems.
           </p>
           <p style={{ fontSize: 13, color: t.muted, marginTop: 10 }}>
-            📍 Kuril, Dhaka, Bangladesh
+            📍 Dhaka, Bangladesh
           </p>
         </div>
 

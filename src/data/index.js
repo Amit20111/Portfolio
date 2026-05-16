@@ -263,7 +263,7 @@ export const CONTACTS = [
   {
     icon: "📍",
     label: "Location",
-    value: "Kuril, Dhaka, Bangladesh",
+    value: "Dhaka, Bangladesh",
     href: null,
   },
 ];

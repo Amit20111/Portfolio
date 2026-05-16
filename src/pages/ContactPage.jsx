@@ -4,10 +4,33 @@ import { FadeIn, Card, Btn, PageHeader } from "../components/UI";
 
 export default function ContactPage({ t }) {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const handleSend = () => {
-    if (form.name && form.email && form.message) setSent(true);
+  const handleSend = async () => {
+    if (form.name && form.email && form.message) {
+      setLoading(true);
+      try {
+        await fetch("https://formsubmit.co/ajax/amitchakraborty20111@gmail.com", {
+          method: "POST",
+          headers: { 
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            message: form.message,
+            _subject: `New message from ${form.name} on Portfolio`
+          })
+        });
+        setSent(true);
+      } catch (error) {
+        console.error("Failed to send message", error);
+      } finally {
+        setLoading(false);
+      }
+    }
   };
 
   return (
@@ -150,9 +173,14 @@ export default function ContactPage({ t }) {
                   onClick={handleSend}
                   variant="primary"
                   t={t}
-                  style={{ width: "100%", textAlign: "center" }}
+                  style={{ 
+                    width: "100%", 
+                    textAlign: "center",
+                    opacity: loading ? 0.7 : 1,
+                    pointerEvents: loading ? "none" : "auto"
+                  }}
                 >
-                  Send Message →
+                  {loading ? "Sending..." : "Send Message →"}
                 </Btn>
               </div>
             )}
