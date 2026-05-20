@@ -235,8 +235,8 @@ export const PROJECTS = [
 ];
 
 export const SKILLS = [
-  { category: "Languages", items: ["Python", "JavaScript", "TypeScript", "C/C++", "Java"] },
-  { category: "AI & ML", items: ["PyTorch", "HuggingFace", "LangChain", "NumPy", "Pandas"] },
+  { category: "Languages", items: ["Python", "JavaScript", "TypeScript", "C/C++"] },
+  { category: "AI & ML", items: ["PyTorch", "RAG", "HuggingFace", "LangChain", "NumPy", "Pandas"] },
   { category: "Web Dev", items: ["FastAPI", "Node.js", "REST APIs", "Next.js"] },
   { category: "Database & DevOps", items: ["MySQL", "MongoDB", "Git"] },
 ];

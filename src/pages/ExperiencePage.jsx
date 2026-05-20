@@ -1,5 +1,5 @@
 import { SKILLS } from "../data/index";
-import { FadeIn, Card, PageHeader } from "../components/UI";
+import { FadeIn, Card, PageHeader, SkillTag } from "../components/UI";
 
 export default function ExperiencePage({ t }) {
   return (
@@ -214,19 +214,7 @@ export default function ExperiencePage({ t }) {
               </h3>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                 {s.items.map((item) => (
-                  <span
-                    key={item}
-                    style={{
-                      fontSize: 13,
-                      padding: "5px 12px",
-                      background: t.tagBg,
-                      borderRadius: 6,
-                      color: t.text,
-                      fontWeight: 500,
-                    }}
-                  >
-                    {item}
-                  </span>
+                  <SkillTag key={item} item={item} t={t} />
                 ))}
               </div>
             </Card>
