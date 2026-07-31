@@ -151,7 +151,7 @@ export default function HomePage({ t, navigate }) {
                 marginBottom: 20,
               }}
             >
-              AI & LLM Researcher
+              AI & LLM Explorer | Backend Developer
             </div>
 
             <p

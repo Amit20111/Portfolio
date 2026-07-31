@@ -77,7 +77,7 @@ export default function HomePage({ t, navigate }) {
                 fontSize: 17, color: t.accent, fontWeight: 500, marginBottom: 16,
               }}
             >
-              AI & LLM Researcher
+              AI & LLM Explorer | Backend Developer
             </div>
 
             <p
