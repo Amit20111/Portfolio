@@ -1,0 +1,21 @@
+export const themes = {
+  light: {
+    bg: "#faf8f5",
+    surface: "#f5f0ea",
+    surfaceSolid: "#f5f0ea",
+    border: "#e8e0d6",
+    borderHover: "#d4c9bc",
+    text: "#1a1a1a",
+    muted: "#6b6560",
+    accent: "#1a1a1a",
+    accent2: "#6b6560",
+    tagBg: "#f0ebe4",
+    navBg: "rgba(250, 248, 245, 0.92)",
+    featuredBg: "#fef7ed",
+    featuredBorder: "#fed7aa",
+    featuredText: "#c2410c",
+    greenText: "#16a34a",
+    primaryBtnBg: "#1a1a1a",
+    primaryBtnText: "#faf8f5",
+  },
+};
