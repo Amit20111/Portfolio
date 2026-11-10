@@ -71,15 +71,6 @@ export default function HomePage({ t, navigate }) {
               Amit Chakraborty
             </h1>
 
-            <div
-              style={{
-                animation: "fadeUp 0.6s ease 0.25s both",
-                fontSize: 17, color: t.accent, fontWeight: 500, marginBottom: 16,
-              }}
-            >
-              AI & LLM Explorer | Backend Developer
-            </div>
-
             <p
               style={{
                 animation: "fadeUp 0.6s ease 0.35s both",
@@ -87,9 +78,10 @@ export default function HomePage({ t, navigate }) {
                 lineHeight: 1.75, fontSize: 15,
               }}
             >
-              Computer Science graduate from North South University with expertise in
-              Large Language Models and Applied AI. Passionate about building intelligent
-              systems that bring research into real-world impact.
+              Computer Science graduate from North South University with hands-on
+              experience building production AI systems, including RAG pipelines and
+              LLM-powered applications. Skilled in designing, shipping, and maintaining
+              reliable software, and driven to turn research ideas into real-world products.
             </p>
 
             <div

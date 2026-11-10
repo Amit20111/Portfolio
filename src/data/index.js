@@ -3,7 +3,6 @@ export const NAV_ITEMS = [
   { label: "About", path: "/about" },
   { label: "Projects", path: "/projects" },
   { label: "Experience", path: "/experience" },
-  { label: "Resume", path: "/CV_Latest.pdf", external: true },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -49,7 +48,7 @@ export const PROJECTS = [
     title: "LLM Weight Refinement & Pruning",
     subtitle: "Post-Training Model Compression",
     featured: true,
-    year: "2025",
+    year: "2024",
     category: "AI / Research",
     desc: "A comprehensive implementation of post-training pruning methods for LLMs, combined with Low-Rank Adaptation for efficient model compression. Includes the novel ClearCut pruning algorithm with structured weight pruning and performance preservation.",
     longDesc:
